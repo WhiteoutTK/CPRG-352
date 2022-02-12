@@ -13,9 +13,10 @@ public class NoteServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String path = getServletContext().getRealPath("/WEB-INF/note.txt");
         String title = "";
         String infos = "";
-        String path = getServletContext().getRealPath("/WEB-INF/note.txt");
+
         
 // Read .txt file
         BufferedReader text = new BufferedReader(new FileReader(new File(path)));
